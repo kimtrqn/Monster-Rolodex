@@ -12,13 +12,19 @@ class App extends React.Component {
       monsters: [],
       searchField: '',
     }
-  }
+    this.searchMonster = this.searchMonster.bind(this);
+  };
 
   componentDidMount() { //fetch a data which will return a promise
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
       .then(users => this.setState({ monsters: users }))
-  }
+  };
+
+  searchMonster(e) {
+    e.preventDefault();
+    this.setState({searchField: e.target.value})
+  };
 
   render() {
     const { monsters, searchField } = this.state;
@@ -29,9 +35,7 @@ class App extends React.Component {
       <div className='app'>
         <SeachBar 
           placeHolder='Search monsters...'
-          handleChange={e => this.setState({ searchField: e.target.value })}
-        
-
+          handleChange={this.searchMonster}
         />
         <CardList monsters={filteredMonsters}/>
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Card from '../card/card';
 
-import './card-list-style.css';
+import './card-list-style.scss';
 
 
 

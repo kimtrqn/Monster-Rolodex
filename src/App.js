@@ -12,7 +12,7 @@ class App extends React.Component {
       monsters: [],
       searchField: '',
     }
-    this.searchMonster = this.searchMonster.bind(this);
+    // this.searchMonster = this.searchMonster.bind(this);
   };
 
   componentDidMount() { //fetch a data which will return a promise
@@ -21,7 +21,7 @@ class App extends React.Component {
       .then(users => this.setState({ monsters: users }))
   };
 
-  searchMonster(e) {
+  searchMonster =(e) => { //dont need bind in constructor as using arrow function, theres lexoscoping as uts also binding
     e.preventDefault();
     this.setState({searchField: e.target.value})
   };
@@ -33,6 +33,7 @@ class App extends React.Component {
       )
     return (
       <div className='app'>
+      <h1>Monster Rolodex</h1>
         <SeachBar 
           placeHolder='Search monsters...'
           handleChange={this.searchMonster}

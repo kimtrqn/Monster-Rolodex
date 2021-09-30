@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CardList from './components/card-list/cardList.jsx';
-import SeachBar from './components/search-bar/searchBar';
+import SearchBar from './components/search-bar/searchBar';
 import './App.css';
 
 class App extends React.Component {
@@ -33,8 +33,9 @@ class App extends React.Component {
       )
     return (
       <div className='app'>
-      <h1>Monster Rolodex</h1>
-        <SeachBar 
+        <h1 className='monster-title'>Monster Rolodex</h1>
+        <SearchBar
+          className='search-bar' 
           placeHolder='Search monsters...'
           handleChange={this.searchMonster}
         />

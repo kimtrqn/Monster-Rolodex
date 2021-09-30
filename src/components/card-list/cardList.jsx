@@ -11,7 +11,7 @@ const CardList = (props) => {
     return (
         <div className='card-list'> 
             {props.monsters.map(monster => (
-                <Card key={monster.id} monster={monster}/>
+                <Card key={monster.id} monster={monster} className='flex-child'/>
                 // <h1 key={monster.id}>{monster.name}</h1>
             ))}
         </div>
